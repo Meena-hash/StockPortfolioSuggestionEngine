@@ -1,0 +1,6 @@
+flask
+stockquotes
+requests
+flask-cors
+mysql-connector-python
+datetime
