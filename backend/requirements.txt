@@ -1,5 +1,5 @@
 flask
-stockquotes
+yfinance
 requests
 flask-cors
 mysql-connector-python
