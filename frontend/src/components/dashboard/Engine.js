@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { DivisionTable } from "./DivisionTable";
+import { TrendChart } from "./TrendChart";
 const Engine = () => {
   const [amount, setAmmount] = useState(5000);
   const [strategy, setStrategy] = useState();
@@ -42,7 +43,7 @@ const Engine = () => {
                       setStrategy(e.target.value);
                     }}
                   >
-                    <option value="undefined">Open this select menu</option>
+                    <option value="undefined">Select an investing type</option>
                     <option value="1">Index</option>
                     <option value="2">Quality</option>
                     <option value="3">Value</option>
@@ -62,8 +63,24 @@ const Engine = () => {
             </Form>
           </Row>
         </Col>
+        <Col xs={6}>
+          <TrendChart
+            trenddata={
+              [
+                // { x: 1, y: 2 },
+                // { x: 2, y: 3 },
+                // { x: 3, y: 5 },
+                // { x: 4, y: 4 },
+                // { x: 5, y: 6 },
+              ]
+            }
+          />
+        </Col>
+        <div className="vertical"></div>
+        <hr></hr>
       </Row>
-      <Row style={{ minHeight: "50vh" }}>
+
+      <Row style={{ minHeight: "25vh" }}>
         <Col xs={6}>
           <DivisionTable data={suggestions}></DivisionTable>
         </Col>

@@ -1,7 +1,9 @@
 import React from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import Container from "react-bootstrap/esm/Container";
 export const DivisionTable = ({ data }) => {
-  return (
+  return data && data.length !== 0 ? (
     <table className="ui celled table">
       <thead>
         <tr>
@@ -12,6 +14,7 @@ export const DivisionTable = ({ data }) => {
           <th>Total Cost</th>
         </tr>
       </thead>
+
       <tbody>
         {Object.keys(data).map((rec) => {
           return (
@@ -50,5 +53,19 @@ export const DivisionTable = ({ data }) => {
         })}
       </tbody>
     </table>
+  ) : (
+    <Container
+      style={{
+        display: "flex",
+        width: "60%",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "25vh",
+        margin: "0 auto",
+      }}
+    >
+      <FontAwesomeIcon icon={faDatabase} size="4x" />
+    </Container>
   );
 };
+export default DivisionTable;
