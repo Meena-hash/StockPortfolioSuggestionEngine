@@ -65,15 +65,16 @@ def get_stock_history(stock_info):
 
 # the total value of a portfolio over last 5 days
 # portfolio_history = {'2022-11-28': 95.82950000000001, '2022-11-29': 95.7344, '2022-11-30': 98.6155, '2022-12-01': 99.2494, '2022-12-02': 99.0892}
-def get_portfolio_history(stocks_shares):
+def get_portfolio_history(stocks_list):
     portfolio_history = {}
-    for stock_symbol, shares in stocks_shares.items():
-        stock_info = get_stock_info(stock_symbol)
+    for stock in stocks_list:
+        stock_info = get_stock_info(stock['symbol'])
         stock_history = get_stock_history(stock_info)
         for date, price in stock_history.items():
             if date not in portfolio_history:
                 portfolio_history[date] = 0
-            portfolio_history[date] += shares * price
+            portfolio_history[date] += stock['quantity'] * price
+            portfolio_history[date] = round(portfolio_history[date], 2)
     return portfolio_history
 
 
