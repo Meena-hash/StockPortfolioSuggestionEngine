@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Engine from "./Engine";
+import Portfolio from "./Portfolio";
+
 const Dashboard = () => {
   const [key, setKey] = useState("home");
   return (
@@ -20,10 +22,11 @@ const Dashboard = () => {
             className="mb-3"
           >
             <Tab eventKey="home" title="Suggestion Engine">
-              <Engine />
+            {key === 'home' &&   <Engine />}
             </Tab>
 
-            <Tab eventKey="profile" title="View Portfolios"></Tab>
+            <Tab eventKey="profile" title="View Portfolios">
+{key === 'profile' &&<Portfolio/>}            </Tab>
           </Tabs>
         </Col>
         <Col xs={1}></Col>
