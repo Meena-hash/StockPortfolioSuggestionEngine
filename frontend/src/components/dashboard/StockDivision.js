@@ -7,7 +7,7 @@ export const options = {
 };
 
 const StockDivision = ({ propotiondata }) => {
-  return propotiondata && propotiondata.length !== 1 ? (
+  return propotiondata && propotiondata.length > 1 ? (
     <>
       <Chart
         chartType="PieChart"
