@@ -1,19 +1,33 @@
 import React from "react";
-import { VictoryChart, VictoryTheme, VictoryLine } from "victory";
+import { VictoryChart, VictoryTheme, VictoryLine, VictoryLabel } from "victory";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartArea } from "@fortawesome/free-solid-svg-icons";
 import Container from "react-bootstrap/esm/Container";
-export const TrendChart = ({ trenddata }) => {
+export const TrendChart = ({ trenddata, charttitle }) => {
   return trenddata && trenddata.length !== 0 ? (
-    <VictoryChart theme={VictoryTheme.material} height={250}>
-      <VictoryLine
-        style={{
-          data: { stroke: "#c43a31" },
-          parent: { border: "1px solid #ccc" },
-        }}
-        data={trenddata}
+    <>
+      <VictoryLabel
+        text={charttitle ? charttitle : ""}
+        x={225}
+        y={10}
+        textAnchor="middle"
       />
-    </VictoryChart>
+      <VictoryChart
+        theme={VictoryTheme.material}
+        height={250}
+        style={{
+          background: { fill: "aliceblue" },
+        }}
+      >
+        <VictoryLine
+          style={{
+            data: { stroke: "#c43a31" },
+            parent: { border: "1px solid #ccc" },
+          }}
+          data={trenddata}
+        />
+      </VictoryChart>
+    </>
   ) : (
     <Container
       style={{
