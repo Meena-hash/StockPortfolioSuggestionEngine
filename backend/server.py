@@ -70,5 +70,14 @@ def get_stock_recommendation():
     except Exception as ex:
         return {'messsage': 'Server error occured.'}, 500
 
+@app.route('/clear', methods=['GET'])
+def clear_portfolio():
+    try:
+        portfolios.clear()
+        return {'message': 'Portfolio history cleared'}, 200
+    except Exception as ex:
+        return {'messsage': 'Server error occured.'}, 500
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='localhost', port=5000)
