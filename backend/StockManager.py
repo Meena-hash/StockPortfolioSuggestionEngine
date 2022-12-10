@@ -6,7 +6,7 @@ investment_strategies = {
     "Growth Investing": {"AMZN": 0.3, "GOOG": 0.4, "META": 0.3},
     "Index Investing": {"VTI": 0.25, "IXUS": 0.25, "ILTB": 0.25, "SMH": 0.25},
     "Quality Investing": {"XOM": 0.25, "HD": 0.25, "AAPL": 0.3, "TSM": 0.2},
-    "Value Investing": {"UNH": 0.2, "BRK.B": 0.2, "JNJ": 0.2, "PG": 0.2, "KO": 0.2}
+    "Value Investing": {"UNH": 0.2, "TGT": 0.2, "JNJ": 0.2, "PG": 0.2, "KO": 0.2}
 }
 
 
